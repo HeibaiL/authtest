@@ -5,11 +5,12 @@ const dataService = require('../server/services/dataService')
 const authMiddleware = require('../server/middlewares/authMiddleware')
 
 
-router.get('/', (req, res) => {
-    res.sendStatus(200);
-})
+// router.get('/', (req, res) => {
+//     res.sendStatus(200);
+// })
 router.post('/register', userController.registerUser);
 router.post('/login', userController.loginUser);
+router.post('/fbLogin', userController.fbLogin);
 router.get('/logout', userController.logoutUser);
 
 router.get('/data', authMiddleware, dataService.getData);

@@ -14,7 +14,7 @@ const authMiddleware = async (req,res, next) => {
         }
 
         const validatedTokenData = tokenService.validateToken(token);
-        console.log(validatedTokenData)
+
         if(!validatedTokenData){
             return next(ApiError.UnauthorizedError())
         }
